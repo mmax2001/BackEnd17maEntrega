@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/css/styles.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Info util</title>
+</head>
+    <body>
+        <div class="back-grey mt-3 table-responsive">
+        <h2 class="m-3">Tabla informativa</h2>    
+        {{#if info}}
+            <table class="table table-hover table-bordered align-middle">
+                <tr>
+                    <th>Argumentos de Entrada</th>
+                    <th>Path de Ejecucion</th>
+                    <th>Sistema Operativo</th>
+                </tr>
+                <tr>
+                    <td>{{info.args}}</td>
+                    <td>{{info.path}}</td>
+                    <td>{{info.so}}</td>
+                </tr>
+                <tr>
+                    <th>Process ID</th>
+                    <th>Version Node</th>
+                    <th>Carpeta del Proyecto</th>
+                </tr>
+                <tr>
+                    <td>{{info.processId}}</td>
+                    <td>{{info.versionNode}}</td>
+                    <td>{{info.folderWork}}</td>
+                </tr>
+                <tr>
+                    <th>Memoria Total Reservada</th>
+                    <th>Cantidad Total de CPUs</th>
+                </tr>
+                <tr>
+                    <td>{{info.memory}}</td>
+                    <td>{{info.cpus}}</td>
+                </tr>
+            </table>
+        {{ else }}
+            <div class="back-yellow m-5">
+                <h2 class="alert alert-danger">No hay informacion disponible</h2>
+            </div>
+        {{/if}}
+
+        </div>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="../js/info.js"></script>
+    </body>
+</html>
