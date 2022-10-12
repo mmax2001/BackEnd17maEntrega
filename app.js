@@ -35,3 +35,7 @@ app.get('/api/random', (req, res) => {
     res.render('numbersTable', { numbers })
     console.log(`Servidor con pid ${process.pid} en puerto ${PORT}`)
 })
+
+app.get('/', (req, res) => {
+    res.redirect('/api/random')
+})
